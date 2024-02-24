@@ -2,7 +2,7 @@ package models
 
 import "time"
 
-type delayedJobs struct {
+type DelayedJobs struct {
 	priority  int    `gorm:"not null;default:0;index:delayedJobsPriority"`
 	attempts  int    `gorm:"not null;default:0"`
 	handler   string `gorm:"not null"`

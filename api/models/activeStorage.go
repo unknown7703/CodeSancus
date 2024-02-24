@@ -4,7 +4,7 @@ import (
 	"time"
 )
 
-type activeStorageAttachments struct {
+type ActiveStorageAttachments struct {
 	name       string    `gorm:"not null;index:indexActiveStorageAttachmentsUniqueness,unique"`
 	recordType string    `gorm:"not null;index:indexActiveStorageAttachmentsUniqueness,unique"`
 	recordId   int       `gorm:"not null;index:indexActiveStorageAttachmentsUniqueness,unique"`
@@ -12,7 +12,7 @@ type activeStorageAttachments struct {
 	createdAt  time.Time `gorm:"not null"`
 }
 
-type activeStorageBlobs struct {
+type ActiveStorageBlobs struct {
 	key         string `gorm:"not null;index:indexActiveStorageBlobsOnKey,unique"`
 	filename    string `gorm:"not null"`
 	contentType string
@@ -23,7 +23,7 @@ type activeStorageBlobs struct {
 	createdAt   time.Time `gorm:"not null"`
 }
 
-type activeStorageVariantRecords struct {
+type ActiveStorageVariantRecords struct {
 	blobId          int    `gorm:"not null;index:indexActiveStorageVariantRecordsUniqueness,unique;foreignKey:blobId"`
 	variationDigest string `gorm:"not null;index:indexActiveStorageVariantRecordsUniqueness,unique"`
 }

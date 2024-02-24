@@ -2,7 +2,7 @@ package models
 
 import "time"
 
-type reports struct {
+type Reports struct {
 	datasetId  int `gorm:"not null;index:indexReportsOnDatasetId"`
 	status     int
 	err        string

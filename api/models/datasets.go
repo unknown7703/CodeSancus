@@ -2,7 +2,7 @@ package models
 
 import "time"
 
-type datasets struct {
+type Datasets struct {
 	name                string
 	programmingLanguage string
 	fileCount           int
