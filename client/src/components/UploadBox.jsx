@@ -2,19 +2,20 @@ import React, { useState } from "react";
 const UploadBox = () => {
   const [file, setFile] = useState();
   const handleFileSelect = (event) => {
-    if (event.target.file) {
-      setFile(event.target.file[0]);
+    if (event.target.files[0]) {
+      setFile(event.target.files[0]);
     }
   };
   const handleUpload = () => {
     if (!file) {
       return;
     }
-    console.log("upload logic");
+      console.log("upload");
+    
   };
   return (
-    <div className="rounded-md drop-shadow-lg text-black ">
-      <div className="bg-blue-800 h-1/6">
+    <div className="rounded-md text-black mt-40 ml-20 max-w-60 flex flex-col gap-3  ">
+      <div className="bg-blue-800 h-1/6 p-2 rounded-md">
         <p className="text-white">Upload Folder</p>
       </div>
       <div className="h-5/6">
@@ -22,7 +23,13 @@ const UploadBox = () => {
           <input onChange={handleFileSelect} type="file" accept=".zip" />
         </div>
         <div>
-          <button onClick={handleUpload}>Uplaod</button>
+          <button
+            onClick={() => {
+              handleUpload();
+            }}
+          >
+            Upload
+          </button>
         </div>
       </div>
     </div>

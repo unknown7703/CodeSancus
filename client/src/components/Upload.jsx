@@ -2,12 +2,11 @@ import UploadBox from "./UploadBox";
 
 const Upload = () => {
   return (
-    <>
+    <div className="h-100">
       <div>
-        <p>Hello</p>
+        <UploadBox />
       </div>
-      <UploadBox />
-    </>
+    </div>
   );
 };
 export default Upload;
