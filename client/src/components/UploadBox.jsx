@@ -13,7 +13,7 @@ const UploadBox = () => {
     console.log("upload logic");
   };
   return (
-    <div className="rounded-md drop-shadow-lg ">
+    <div className="rounded-md drop-shadow-lg text-black ">
       <div className="bg-blue-800 h-1/6">
         <p className="text-white">Upload Folder</p>
       </div>
