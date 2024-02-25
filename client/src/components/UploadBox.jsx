@@ -13,11 +13,11 @@ const UploadBox = () => {
       setFile(event.target.files[0]);
     }
   };
-  const handleUpload = (e) => {
+  const handleUpload = () => {
     if (!file) {
       return;
     }
-    e.preventDefault();
+  
     const payload = {
       dataSetName: name,
       dataSetFile: file[0],

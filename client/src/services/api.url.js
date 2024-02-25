@@ -1,6 +1,6 @@
 export const API_URLS = {
   analyseDataSet: {
-    endpoint: "analyse",
+    endpoint: "admin/analyse",
     method: "POST",
   },
 };
