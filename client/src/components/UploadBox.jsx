@@ -20,7 +20,7 @@ const UploadBox = () => {
 
     const payload = {
       dataSetName: name,
-      dataSetFile: file[0],
+      dataSetFile: file,
     };
     uploadService.call(payload);
     setName("");
