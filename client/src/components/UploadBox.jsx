@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import useApi from "../hooks/useApi";
+import { API_URLS } from "../services/api.url";
 const UploadBox = () => {
   const [file, setFile] = useState();
   const [name, setName] = useState();
+  const uploadService = useApi(API_URLS.analyseDataSet);
   const handleNameChange = (event) => {
     setName(event.target.value);
   };
@@ -10,17 +13,22 @@ const UploadBox = () => {
       setFile(event.target.files[0]);
     }
   };
-  const handleUpload = () => {
+  const handleUpload = (e) => {
     if (!file) {
       return;
     }
-    console.log("upload");
-    console.log(name);
+    e.preventDefault();
+    const payload = {
+      dataSetName: name,
+      dataSetFile: file[0],
+    };
+    uploadService.call(payload);
     setName("");
     setFile("");
     document.getElementById("zipUp").value = "";
     document.getElementById("zipText").value = "";
   };
+
   return (
     <div className="rounded-md text-black  max-w-80 flex flex-col gap-3  ">
       <div className="bg-blue-800 h-1/6 p-2 rounded-md">
