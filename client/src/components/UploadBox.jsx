@@ -17,7 +17,7 @@ const UploadBox = () => {
     if (!file) {
       return;
     }
-  
+
     const payload = {
       dataSetName: name,
       dataSetFile: file[0],
